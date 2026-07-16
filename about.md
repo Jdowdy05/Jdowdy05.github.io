@@ -12,7 +12,7 @@ permalink: /about/
 <section class="about-layout section--rule">
   <div class="about-monogram" aria-hidden="true">JD</div>
   <div class="about-copy">
-    <p class="about-lede">I’m a PhD student at the University of Louisville researching reinforcement learning in robotics.</p>
+    <p class="about-lede">I’m a PhD candidate at the University of Louisville researching reinforcement learning in robotics.</p>
     <p>I’m interested in learning-based methods that help robots adapt, act autonomously, and make better use of the signals available to them.</p>
     <p>This site brings together my current research directions, selected public code, academic record, and professional background.</p>
 

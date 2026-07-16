@@ -572,6 +572,19 @@ a {
   transform: translateY(-1px);
 }
 
+.profile-actions a.profile-actions__social {
+  width: 35px;
+  min-width: 35px;
+  padding: 0;
+  justify-content: center;
+}
+
+.profile-actions__social svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
 .academic-intro__copy {
   max-width: 730px;
   margin: 42px auto 0;
@@ -1844,10 +1857,16 @@ a {
 }
 
 @media (max-width: 440px) {
-  .profile-actions a {
+  .profile-actions__cv {
     padding-right: 10px;
     padding-left: 10px;
     font-size: 10px;
+  }
+
+  .profile-actions a.profile-actions__social {
+    width: 44px;
+    min-width: 44px;
+    padding: 0;
   }
 
   .publication-card__media {

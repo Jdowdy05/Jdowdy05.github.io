@@ -15,7 +15,7 @@ permalink: /cv/
 </header>
 
 <section class="snapshot-grid section--rule" aria-label="Academic snapshot">
-  <article><span>01</span><p>Current role</p><h2>PhD student</h2></article>
+  <article><span>01</span><p>Current role</p><h2>PhD candidate</h2></article>
   <article><span>02</span><p>Institution</p><h2>University of Louisville</h2></article>
   <article><span>03</span><p>Research focus</p><h2>Reinforcement learning for robotics</h2></article>
   <article><span>04</span><p>Technical domains</p><h2>Learning, simulation, and sensing</h2></article>

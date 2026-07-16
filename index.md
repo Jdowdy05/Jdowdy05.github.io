@@ -1,18 +1,20 @@
 ---
 title: Home
-description: Jordan Dowdy is a PhD student researching reinforcement learning in robotics at the University of Louisville.
+description: Jordan Dowdy is a PhD candidate researching reinforcement learning in robotics at the University of Louisville.
 permalink: /
 ---
 
 <header class="academic-intro">
   <p class="academic-intro__kicker">Robotics · Reinforcement learning · Human-robot interaction</p>
   <h1>Jordan Dowdy</h1>
-  <p class="academic-intro__role">PhD student at the University of Louisville</p>
+  <p class="academic-intro__role">PhD candidate at the University of Louisville</p>
 
   <div class="profile-actions" role="group" aria-label="Profile links">
-    <a href="{{ '/cv/' | relative_url }}">CV</a>
+    <a class="profile-actions__cv" href="{{ '/cv/' | relative_url }}">CV</a>
     {% for social in site.data.profile.social %}
-      <a href="{{ social.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.label | escape }} (opens in a new tab)">{{ social.label }}</a>
+      <a class="profile-actions__social" href="{{ social.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.label | escape }} (opens in a new tab)" title="{{ social.label | escape }}">
+        {% include icon.html name=social.icon %}
+      </a>
     {% endfor %}
   </div>
 
