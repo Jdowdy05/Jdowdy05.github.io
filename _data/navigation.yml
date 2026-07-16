@@ -1,0 +1,18 @@
+- label: Home
+  icon: "⌂"
+  url: /
+- label: Current Work
+  icon: "◎"
+  url: /current-work/
+- label: CV
+  icon: "▤"
+  url: /cv/
+- label: Publications
+  icon: "¶"
+  url: /publications/
+- label: Projects
+  icon: "◇"
+  url: /projects/
+- label: About
+  icon: "i"
+  url: /about/

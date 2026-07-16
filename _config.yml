@@ -1,0 +1,30 @@
+title: Jordan Dowdy
+description: PhD student researching reinforcement learning in robotics.
+url: "https://jdowdy05.github.io"
+baseurl: ""
+lang: en_US
+timezone: America/New_York
+permalink: pretty
+markdown: kramdown
+repository: Jdowdy05/jdowdy05.github.io
+cv_pdf: ""
+
+plugins:
+  - jekyll-seo-tag
+
+sass:
+  style: compressed
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - THIRD_PARTY_NOTICES.md
+  - vendor
+  - work

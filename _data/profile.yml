@@ -1,0 +1,20 @@
+name: Jordan Dowdy
+first_name: Jordan
+initials: JD
+role: PhD student researching reinforcement learning in robotics.
+affiliation: University of Louisville
+welcome: Welcome — I’m Jordan.
+short_bio: Robotics PhD researcher advancing reinforcement learning for embodied systems.
+social:
+  - label: X / Twitter
+    icon: x
+    url: https://x.com/jorgeNdroids
+  - label: GitHub
+    icon: github
+    url: https://github.com/Jdowdy05
+  - label: LinkedIn
+    icon: linkedin
+    url: https://www.linkedin.com/in/jmdowdy/
+  - label: Google Scholar
+    icon: googlescholar
+    url: https://scholar.google.com/citations?user=HWy_m9cAAAAJ&hl=en

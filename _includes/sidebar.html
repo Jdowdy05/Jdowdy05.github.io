@@ -1,0 +1,42 @@
+<aside class="sidebar" id="site-sidebar" aria-label="Profile and primary navigation">
+  <button class="sidebar__collapse" id="sidebar-collapse" type="button" aria-controls="site-sidebar" aria-expanded="true">
+    <span class="sidebar__collapse-icon" aria-hidden="true">‹</span>
+    <span class="sidebar__collapse-text">Collapse sidebar</span>
+  </button>
+
+  <div class="sidebar__identity">
+    <div class="portrait-placeholder" role="img" aria-label="Portrait placeholder for {{ site.data.profile.name }}">
+      <span>{{ site.data.profile.initials }}</span>
+    </div>
+    <p class="sidebar__welcome">{{ site.data.profile.welcome }}</p>
+    <p class="sidebar__bio">{{ site.data.profile.short_bio }}</p>
+  </div>
+
+  <div class="social-links" aria-label="Social profiles">
+    {% for social in site.data.profile.social %}
+      <a class="social-link" href="{{ social.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.label | escape }} (opens in a new tab)" title="{{ social.label | escape }}">
+        {% include icon.html name=social.icon %}
+      </a>
+    {% endfor %}
+  </div>
+
+  <div class="sidebar__divider" aria-hidden="true"></div>
+  <p class="sidebar__section-label">Explore</p>
+
+  <nav class="primary-nav" aria-label="Primary navigation">
+    <ul>
+      {% for item in site.data.navigation %}
+        {% assign active = false %}
+        {% if page.url == item.url %}{% assign active = true %}{% endif %}
+        <li>
+          <a href="{{ item.url | relative_url }}"{% if active %} class="is-active" aria-current="page"{% endif %} title="{{ item.label }}">
+            <span class="nav-icon" aria-hidden="true">{{ item.icon }}</span>
+            <span class="nav-label">{{ item.label }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <p class="sidebar__foot">Louisville, Kentucky</p>
+</aside>

@@ -1,0 +1,25 @@
+- name: IsaacLab
+  summary: TelosLab’s robot-learning additions to NVIDIA Isaac Sim and Isaac Lab.
+  url: https://github.com/Jdowdy05/IsaacLab
+  language: Python
+  featured: true
+- name: OBARO
+  summary: A collection of versions and variations of OBARO.
+  url: https://github.com/Jdowdy05/OBARO
+  language: Python
+  featured: true
+- name: REsquared Flexiforce
+  summary: Code for integrating a FlexiForce sensor with the RE2 robotic arm.
+  url: https://github.com/Jdowdy05/REsquared-flexiforce
+  language: C++
+  featured: true
+- name: Skin Sensor Plotter
+  summary: Plots LabVIEW data used to test resistance in skin sensors.
+  url: https://github.com/Jdowdy05/SkinSensorPlotter
+  language: Python
+  featured: false
+- name: Octocan NAC
+  summary: NAC software for Octocan.
+  url: https://github.com/Jdowdy05/Octocan-NAC
+  language: C++
+  featured: false
