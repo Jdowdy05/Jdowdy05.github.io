@@ -75,22 +75,31 @@
     });
   };
 
+  const placeBlinker = (column, row) => {
+    [-1, 0, 1].forEach((offset) => {
+      state[indexFor(column + offset, row)] = 1;
+    });
+  };
+
   const seedGrid = () => {
     const random = randomSource(hashString(`${window.location.pathname}|living-lattice`));
-    const density = mobileQuery.matches ? 0.09 : 0.12;
+    const density = mobileQuery.matches ? 0.13 : 0.16;
     state.fill(0);
     trail.fill(0);
     generation = 0;
 
     for (let row = 0; row < rows; row += 1) {
       for (let column = 0; column < columns; column += 1) {
-        const horizontalWeight = 0.45 + (column / Math.max(1, columns - 1)) * 0.75;
+        const horizontalWeight = 0.55 + (column / Math.max(1, columns - 1)) * 0.45;
         if (random() < density * horizontalWeight) state[row * columns + column] = 1;
       }
     }
 
+    placeGlider(Math.max(2, Math.floor(columns * 0.42)), Math.max(2, Math.floor(rows * 0.34)));
     placeGlider(Math.max(2, Math.floor(columns * 0.7)), Math.max(2, Math.floor(rows * 0.18)));
     placeGlider(Math.max(2, Math.floor(columns * 0.84)), Math.max(2, Math.floor(rows * 0.62)));
+    placeBlinker(Math.max(2, Math.floor(columns * 0.58)), Math.max(2, Math.floor(rows * 0.72)));
+    placeBlinker(Math.max(2, Math.floor(columns * 0.88)), Math.max(2, Math.floor(rows * 0.42)));
   };
 
   const roundedCell = (x, y, size, radius) => {
@@ -102,7 +111,7 @@
 
   const draw = () => {
     context.clearRect(0, 0, width, height);
-    const squareSize = Math.max(6, Math.round(cellSize * 0.3));
+    const squareSize = Math.max(6, Math.round(cellSize * 0.28));
 
     for (let row = 0; row < rows; row += 1) {
       for (let column = 0; column < columns; column += 1) {
@@ -111,14 +120,14 @@
         const afterglow = trail[index];
         if (!alive && afterglow === 0) continue;
 
-        const horizontalWeight = 0.45 + (column / Math.max(1, columns - 1)) * 0.55;
+        const horizontalWeight = 0.58 + (column / Math.max(1, columns - 1)) * 0.42;
         if (alive) {
-          const accent = (column * 13 + row * 7 + generation) % 19 === 0;
+          const accent = (column * 13 + row * 7 + generation) % 23 === 0;
           context.fillStyle = accent
-            ? `rgba(45, 212, 191, ${0.13 * horizontalWeight})`
-            : `rgba(15, 118, 110, ${0.08 * horizontalWeight})`;
+            ? `rgba(164, 112, 74, ${0.4 * horizontalWeight})`
+            : `rgba(48, 94, 76, ${0.31 * horizontalWeight})`;
         } else {
-          context.fillStyle = `rgba(15, 23, 42, ${0.018 * afterglow * horizontalWeight})`;
+          context.fillStyle = `rgba(59, 52, 45, ${0.055 * afterglow * horizontalWeight})`;
         }
 
         const x = column * cellSize + (cellSize - squareSize) / 2;
@@ -161,11 +170,13 @@
     if (population < Math.max(5, Math.floor(columns * rows * 0.015))) {
       const position = (generation * 7) % Math.max(4, rows - 4);
       placeGlider(Math.max(2, Math.floor(columns * 0.76)), position);
+      placeBlinker(Math.max(2, Math.floor(columns * 0.56)), Math.max(2, Math.floor(rows * 0.7)));
     }
+
   };
 
   const shouldAnimate = () => !userPaused && !motionQuery.matches && !saveData && !document.hidden;
-  const cadence = () => (mobileQuery.matches ? 640 : 480);
+  const cadence = () => (mobileQuery.matches ? 720 : 560);
 
   const schedule = () => {
     window.clearTimeout(timer);
@@ -182,7 +193,7 @@
     const motionUnavailable = motionQuery.matches || saveData;
     pauseButton.hidden = motionUnavailable;
     pauseButton.dataset.paused = String(userPaused);
-    pauseLabel.textContent = userPaused ? "Resume living grid" : "Pause living grid";
+    pauseLabel.textContent = userPaused ? "Resume Game of Life" : "Pause Game of Life";
   };
 
   const resizeCanvas = () => {

@@ -1,1 +1,85 @@
-[]
+- title: Real-Time Neuroadaptive Control with Tactile Calibration for Physical Human-Robot Interaction
+  year: 2026
+  kind: Preprint (not peer-reviewed)
+  venue: Preprints.org · Version 1
+  venue_short: PREPRINT
+  topic: Tactile interaction
+  art: tactile
+  featured: true
+  authors:
+    - name: Ashutosh Prakash
+    - name: Mohamed A. Hanafy
+    - name: Jordan Dowdy
+      highlight: true
+    - name: Dan O. Popa
+  links:
+    - label: Paper
+      url: https://doi.org/10.20944/preprints202606.0309.v1
+  summary: A dual-loop neuroadaptive tactile interface was evaluated across 28 participants and 112 personalized calibration models, enabling real-time human-guided robot-arm motion.
+
+- title: Towards Torque-Driven Reinforcement Learning for Quadruped Locomotion
+  year: 2026
+  kind: Conference paper
+  venue: 2026 IEEE/SICE International Symposium on System Integration (SII) · pp. 1259–1264
+  venue_short: SII
+  topic: Torque-driven locomotion
+  art: torque
+  featured: true
+  authors:
+    - name: Jordan Dowdy
+      highlight: true
+    - name: Jean Chagas Vaz
+  links:
+    - label: Paper
+      url: https://doi.org/10.1109/SII64115.2026.11404550
+  summary: A torque-control reinforcement-learning framework for the Unitree B1 traverses rough terrain, tracks commanded velocity, and climbs stairs in Isaac simulation without exteroceptive sensing.
+
+- title: Towards Miniature Humanoid Tele-Loco-Manipulation Using Virtual Reality and Reinforcement Learning
+  year: 2025
+  kind: Conference paper
+  venue: 2025 IEEE-RAS 24th International Conference on Humanoid Robots (Humanoids) · pp. 1233–1240
+  venue_short: HUMANOIDS
+  topic: Tele-loco-manipulation
+  art: humanoid
+  featured: true
+  authors:
+    - name: Nicolas Kosanovic
+    - name: Jordan Dowdy
+      highlight: true
+    - name: Jean Chagas Vaz
+  links:
+    - label: Paper
+      url: https://doi.org/10.1109/HUMANOIDS65713.2025.11264861
+  summary: A full-body telepresence stack for the ROBOTIS OP3 combines virtual-reality upper-body control with reinforcement-learning locomotion for compliant tele-loco-manipulation.
+
+- title: "Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds"
+  year: 2025
+  kind: Conference paper
+  venue: 2025 IEEE 21st International Conference on Automation Science and Engineering (CASE) · pp. 2194–2199
+  venue_short: CASE
+  topic: Sim-to-real locomotion
+  art: sim
+  featured: true
+  authors:
+    - name: Jordan Dowdy
+      highlight: true
+    - name: Jean Chagas Vaz
+  links:
+    - label: Paper
+      url: https://doi.org/10.1109/CASE58245.2025.11163761
+
+- title: Adaptive Robot Collaboration Using Robotic Skin and Motion Similarity
+  year: 2024
+  kind: M.S. thesis
+  venue: Electrical Engineering · University of Louisville
+  venue_short: DISSERTATION
+  topic: Human-robot collaboration
+  art: collaboration
+  featured: true
+  authors:
+    - name: Jordan Dowdy
+      highlight: true
+  links:
+    - label: Dissertation
+      url: https://doi.org/10.18297/etd/4456
+  summary: OctoCan tactile sensing and neuroadaptive control support physical robot guidance, while online dynamic time-warping enables speed-adaptive imitation with the Zeno humanoid.

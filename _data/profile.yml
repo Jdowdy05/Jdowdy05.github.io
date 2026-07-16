@@ -7,14 +7,18 @@ welcome: Welcome — I’m Jordan.
 short_bio: Robotics PhD researcher advancing reinforcement learning for embodied systems.
 social:
   - label: X / Twitter
+    key: x
     icon: x
     url: https://x.com/jorgeNdroids
   - label: GitHub
+    key: github
     icon: github
     url: https://github.com/Jdowdy05
   - label: LinkedIn
+    key: linkedin
     icon: linkedin
     url: https://www.linkedin.com/in/jmdowdy/
   - label: Google Scholar
+    key: scholar
     icon: googlescholar
     url: https://scholar.google.com/citations?user=HWy_m9cAAAAJ&hl=en
