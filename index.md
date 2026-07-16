@@ -19,9 +19,14 @@ permalink: /
     {% endfor %}
   </div>
 
-  <div class="academic-intro__copy">
-    <p>I research reinforcement learning for embodied robots, with a focus on legged locomotion, sim-to-real transfer, and control that remains useful beyond a single training environment.</p>
-    <p>My work also explores tactile sensing and physical human-robot interaction—connecting learning algorithms with the practical realities of sensing, evaluation, and deployment.</p>
+  <div class="academic-intro__profile">
+    {% if site.data.profile.headshot != "" %}
+      <img class="academic-intro__portrait" src="{{ site.data.profile.headshot | relative_url }}" alt="Headshot of {{ site.data.profile.name | escape }}" width="800" height="800" decoding="async">
+    {% endif %}
+    <div class="academic-intro__copy">
+      <p>I research reinforcement learning for embodied robots, with a focus on legged locomotion, sim-to-real transfer, and control that remains useful beyond a single training environment.</p>
+      <p>My work also explores tactile sensing and physical human-robot interaction—connecting learning algorithms with the practical realities of sensing, evaluation, and deployment.</p>
+    </div>
   </div>
 </header>
 
