@@ -79,6 +79,7 @@
   links:
     - label: Paper
       url: https://doi.org/10.1109/CASE58245.2025.11163761
+  summary: A reinforcement-learning locomotion pipeline trains in NVIDIA Isaac Sim and transfers to a physical Unitree Go1 for real-world evaluation.
 
 - title: Adaptive Robot Collaboration Using Robotic Skin and Motion Similarity
   year: 2024

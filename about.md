@@ -10,12 +10,12 @@ permalink: /about/
 </header>
 
 <section class="about-layout section--rule">
-  <div class="about-monogram" aria-hidden="true">JD</div>
+  <img class="about-portrait" src="{{ site.data.profile.headshot | relative_url }}" alt="Headshot of {{ site.data.profile.name | escape }}" width="800" height="800" decoding="async">
   <div class="about-copy">
     <p class="about-lede">I’m a PhD candidate at the University of Louisville researching reinforcement learning in robotics.</p>
     <p>I’m a member of {% include lab-link.html %} at the University of Louisville.</p>
     <p>I’m interested in learning-based methods that help robots adapt, act autonomously, and make better use of the signals available to them.</p>
-    <p>This site brings together my current research directions, publications, academic record, and professional background.</p>
+    <p>This site brings together my current research directions, publications, and selected academic work.</p>
 
     <div class="interest-list" aria-label="Research themes">
       <p class="eyebrow">Research themes</p>

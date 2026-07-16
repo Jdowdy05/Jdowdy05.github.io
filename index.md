@@ -1,7 +1,12 @@
 ---
-title: Home
+title: Jordan Dowdy
 description: Jordan Dowdy is a PhD candidate researching reinforcement learning in robotics at the University of Louisville.
 permalink: /
+image:
+  path: /assets/images/profile/jordan-dowdy-headshot.jpeg
+  width: 800
+  height: 800
+  alt: Headshot of Jordan Dowdy
 ---
 
 <header class="academic-intro">
@@ -64,18 +69,5 @@ permalink: /
         <p>{{ item.summary }}</p>
       </article>
     {% endfor %}
-  </div>
-</section>
-
-<section class="home-section" aria-labelledby="projects-heading">
-  <div class="minimal-heading">
-    <div>
-      <p class="eyebrow">Work archive</p>
-      <h2 id="projects-heading">Projects</h2>
-    </div>
-  </div>
-
-  <div class="projects-empty">
-    <p>Projects will be added here as the archive develops.</p>
   </div>
 </section>

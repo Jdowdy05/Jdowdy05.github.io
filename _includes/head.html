@@ -3,6 +3,31 @@
 <meta name="theme-color" content="#242a29">
 <meta name="color-scheme" content="light">
 {% seo %}
+{% if page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ site.data.profile.name | jsonify }},
+  "url": {{ '/' | absolute_url | jsonify }},
+  "image": {{ site.data.profile.headshot | absolute_url | jsonify }},
+  "jobTitle": "PhD Candidate",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": {{ site.data.profile.affiliation | jsonify }}
+  },
+  "memberOf": {
+    "@type": "Organization",
+    "name": {{ site.data.profile.lab.name | jsonify }},
+    "url": {{ site.data.profile.lab.url | jsonify }}
+  },
+  "sameAs": [
+    {% for social in site.data.profile.social %}{{ social.url | jsonify }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}?v=robot-2" sizes="any">
 <link rel="icon" href="{{ '/assets/icons/favicon.svg' | relative_url }}?v=robot-2" type="image/svg+xml">
 <link rel="icon" href="{{ '/assets/icons/favicon-32.png' | relative_url }}?v=robot-2" type="image/png" sizes="32x32">

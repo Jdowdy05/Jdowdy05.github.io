@@ -1,4 +1,5 @@
 title: Jordan Dowdy
+tagline: Robotics PhD Candidate
 description: PhD candidate researching reinforcement learning in robotics.
 url: "https://jdowdy05.github.io"
 baseurl: ""
@@ -8,6 +9,23 @@ permalink: pretty
 markdown: kramdown
 repository: Jdowdy05/jdowdy05.github.io
 cv_pdf: "/assets/docs/jordan-dowdy-cv.pdf"
+cv_version: "20260716-2"
+
+author:
+  name: Jordan Dowdy
+  url: "https://jdowdy05.github.io"
+  twitter: jorgeNdroids
+
+twitter:
+  username: jorgeNdroids
+
+social:
+  name: Jordan Dowdy
+  links:
+    - https://x.com/jorgeNdroids
+    - https://github.com/Jdowdy05
+    - https://www.linkedin.com/in/jmdowdy/
+    - https://scholar.google.com/citations?user=HWy_m9cAAAAJ&hl=en
 
 plugins:
   - jekyll-seo-tag
