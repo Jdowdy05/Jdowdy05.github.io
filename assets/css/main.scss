@@ -1290,7 +1290,6 @@ a {
 }
 
 .research-card h2,
-.snapshot-grid h2,
 .project-card h2,
 .empty-state h2 {
   margin: 0;
@@ -1346,43 +1345,6 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-}
-
-.snapshot-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 15px;
-}
-
-.snapshot-grid article {
-  min-height: 180px;
-  padding: 26px;
-  background: rgba(255, 255, 252, 0.96);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-}
-
-.snapshot-grid span {
-  color: var(--terracotta-text);
-  font-size: 10px;
-  font-weight: 800;
-}
-
-.snapshot-grid p {
-  margin: 40px 0 6px;
-  color: var(--muted);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.snapshot-grid h2 {
-  font-size: clamp(1.35rem, 2.7vw, 1.9rem);
-}
-
-.snapshot-grid h2 a {
-  color: inherit;
 }
 
 .cv-document {
@@ -2048,10 +2010,6 @@ a {
     padding: 24px;
     grid-template-columns: 1fr;
     gap: 15px;
-  }
-
-  .snapshot-grid {
-    grid-template-columns: 1fr;
   }
 
   .cv-document__header {
