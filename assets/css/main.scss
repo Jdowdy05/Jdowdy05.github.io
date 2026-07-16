@@ -363,7 +363,7 @@ a {
   line-height: 1;
   text-decoration: none;
   align-items: center;
-  gap: 11px;
+  gap: 0;
   transition: color 160ms ease, background-color 160ms ease;
 }
 
@@ -378,24 +378,14 @@ a {
   box-shadow: inset 3px 0 0 #a9c7b7;
 }
 
-.nav-icon {
-  display: inline-grid;
-  width: 21px;
-  min-width: 21px;
-  height: 21px;
-  color: #92a49a;
+.nav-compact {
+  display: none;
+  color: #aebdb5;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 9px;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   line-height: 1;
-  place-items: center;
-}
-
-.nav-icon svg {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
 }
 
 .cv-logo {
@@ -407,12 +397,7 @@ a {
   mask: url("../icons/cv-logo.png") center / contain no-repeat;
 }
 
-.nav-icon .cv-logo {
-  width: 17px;
-  height: 17px;
-}
-
-.is-active .nav-icon {
+.is-active .nav-compact {
   color: #dcebe3;
 }
 
@@ -509,6 +494,13 @@ a {
   min-height: 44px;
   padding: 8px;
   justify-content: center;
+}
+
+.sidebar-collapsed .nav-compact {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
 }
 
 .sidebar-collapsed .sidebar__bottom {

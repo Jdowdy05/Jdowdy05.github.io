@@ -1,18 +1,18 @@
 - label: Home
-  icon: "01"
+  compact: H
   url: /
 - label: Current Work
-  icon: "02"
+  compact: W
   url: /current-work/
 - label: CV
-  icon: cv
+  compact: CV
   url: /cv/
 - label: Publications
-  icon: "04"
+  compact: PUB
   url: /publications/
 - label: Projects
-  icon: "05"
+  compact: PRJ
   url: /projects/
 - label: About
-  icon: "06"
+  compact: A
   url: /about/
