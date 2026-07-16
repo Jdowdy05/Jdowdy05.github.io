@@ -708,13 +708,14 @@ a {
 .publication-card__media {
   position: relative;
   display: flex;
-  min-height: 254px;
+  min-height: 0;
   margin: 0;
   overflow: hidden;
   color: #f8fbf9;
   background: #e9eeeb;
   border: 1px solid #d7ddd9;
   border-radius: 2px;
+  align-self: start;
   flex-direction: column;
 }
 
@@ -729,10 +730,35 @@ a {
 .publication-card__image {
   display: block;
   width: 100%;
-  height: 210px;
-  object-fit: contain;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
   object-position: center;
   background: #edf1ef;
+}
+
+.publication-card__image--tactile {
+  object-position: 46% 50%;
+}
+
+.publication-card__image--torque {
+  object-position: 52% 46%;
+}
+
+.publication-card__image--humanoid {
+  object-position: 100% 100%;
+  transform: scale(1.48);
+  transform-origin: right bottom;
+}
+
+.publication-card__image--sim {
+  object-position: 45% 50%;
+}
+
+.publication-card__image--collaboration {
+  object-position: 50% 48%;
+  transform: scale(1.12);
+  transform-origin: center;
 }
 
 .publication-card__caption {
@@ -1859,10 +1885,6 @@ a {
     grid-template-columns: minmax(205px, 0.72fr) minmax(0, 1.28fr);
   }
 
-  .publication-card__media {
-    min-height: 225px;
-  }
-
   .project-grid {
     grid-template-columns: 1fr;
   }
@@ -1930,10 +1952,6 @@ a {
     padding: 14px;
     grid-template-columns: 1fr;
     gap: 22px;
-  }
-
-  .publication-card__media {
-    min-height: 205px;
   }
 
   .publication-card__body {
@@ -2046,9 +2064,6 @@ a {
     padding: 0;
   }
 
-  .publication-card__media {
-    min-height: 184px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

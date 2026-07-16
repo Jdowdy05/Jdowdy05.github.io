@@ -6,4 +6,5 @@ _site/
 vendor/
 .playwright-cli/
 tmp/
+output/
 .DS_Store

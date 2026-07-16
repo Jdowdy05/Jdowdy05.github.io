@@ -1,7 +1,7 @@
 {% assign publication = include.publication %}
 <article class="publication-card">
   <figure class="publication-card__media">
-    <img class="publication-card__image" src="{{ publication.image | relative_url }}" alt="{{ publication.image_alt | escape }}" loading="lazy" decoding="async">
+    <img class="publication-card__image publication-card__image--{{ publication.art }}" src="{{ publication.image | relative_url }}" alt="{{ publication.image_alt | escape }}" loading="lazy" decoding="async">
     <figcaption class="publication-card__caption">
       <span class="publication-card__caption-badge">{{ publication.venue_short }}</span>
       <span class="publication-card__caption-topic">{{ publication.topic }}</span>
