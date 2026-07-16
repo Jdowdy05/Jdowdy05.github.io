@@ -5,3 +5,10 @@ The X, GitHub, LinkedIn, and Google Scholar brand glyphs are sourced from Simple
 - Project: https://github.com/simple-icons/simple-icons
 - License: https://github.com/simple-icons/simple-icons/blob/13.21.0/LICENSE.md
 - Disclaimer: https://github.com/simple-icons/simple-icons/blob/13.21.0/DISCLAIMER.md
+
+The robot favicon and CV glyph are adapted from Bootstrap Icons 1.13.1, distributed under the MIT License.
+
+- Project: https://github.com/twbs/icons
+- License: https://github.com/twbs/icons/blob/v1.13.1/LICENSE
+- Robot icon: https://icons.getbootstrap.com/icons/robot/
+- CV icon: https://icons.getbootstrap.com/icons/file-person-fill/

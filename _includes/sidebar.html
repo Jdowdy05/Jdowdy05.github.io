@@ -5,11 +5,16 @@
   </button>
 
   <div class="sidebar__identity">
-    <div class="portrait-placeholder" role="img" aria-label="Portrait placeholder for {{ site.data.profile.name }}">
-      <span>{{ site.data.profile.initials }}</span>
-    </div>
+    {% if site.data.profile.headshot != "" %}
+      <img class="portrait-photo" src="{{ site.data.profile.headshot | relative_url }}" alt="Portrait of {{ site.data.profile.name | escape }}">
+    {% else %}
+      <div class="portrait-placeholder" role="img" aria-label="Portrait placeholder for {{ site.data.profile.name }}">
+        <span>{{ site.data.profile.initials }}</span>
+      </div>
+    {% endif %}
     <p class="sidebar__welcome">{{ site.data.profile.welcome }}</p>
     <p class="sidebar__affiliation">{{ site.data.profile.affiliation }}</p>
+    <p class="sidebar__lab">Member of <a href="{{ site.data.profile.lab.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ site.data.profile.lab.name | escape }} (opens in a new tab)"><strong>{{ site.data.profile.lab.name }}</strong></a></p>
     <p class="sidebar__bio">{{ site.data.profile.short_bio }}</p>
   </div>
 
@@ -31,7 +36,7 @@
         {% if page.url == item.url %}{% assign active = true %}{% endif %}
         <li>
           <a href="{{ item.url | relative_url }}"{% if active %} class="is-active" aria-current="page"{% endif %} title="{{ item.label }}">
-            <span class="nav-icon" aria-hidden="true">{{ item.icon }}</span>
+            <span class="nav-icon" aria-hidden="true">{% if item.icon == "cv" %}{% include icon.html name="cv" %}{% else %}{{ item.icon }}{% endif %}</span>
             <span class="nav-label">{{ item.label }}</span>
           </a>
         </li>

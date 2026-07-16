@@ -5,7 +5,7 @@
   icon: "02"
   url: /current-work/
 - label: CV
-  icon: "03"
+  icon: cv
   url: /cv/
 - label: Publications
   icon: "04"

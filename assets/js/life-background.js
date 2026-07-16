@@ -13,17 +13,20 @@
   const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
   const mobileQuery = window.matchMedia("(max-width: 899px)");
   const saveData = Boolean(navigator.connection && navigator.connection.saveData);
+
   let state = new Uint8Array(0);
   let next = new Uint8Array(0);
-  let trail = new Uint8Array(0);
+  let intensity = new Float32Array(0);
   let columns = 0;
   let rows = 0;
   let cellSize = 30;
   let width = 0;
   let height = 0;
   let generation = 0;
-  let timer = 0;
+  let animationFrame = 0;
   let resizeTimer = 0;
+  let lastFrameTime = 0;
+  let lastGenerationTime = 0;
 
   const readPausedPreference = () => {
     try {
@@ -69,8 +72,7 @@
   };
 
   const placeGlider = (column, row) => {
-    const cells = [[1, 0], [2, 1], [0, 2], [1, 2], [2, 2]];
-    cells.forEach(([offsetX, offsetY]) => {
+    [[1, 0], [2, 1], [0, 2], [1, 2], [2, 2]].forEach(([offsetX, offsetY]) => {
       state[indexFor(column + offsetX, row + offsetY)] = 1;
     });
   };
@@ -83,14 +85,14 @@
 
   const seedGrid = () => {
     const random = randomSource(hashString(`${window.location.pathname}|living-lattice`));
-    const density = mobileQuery.matches ? 0.13 : 0.16;
+    const density = mobileQuery.matches ? 0.145 : 0.17;
     state.fill(0);
-    trail.fill(0);
+    intensity.fill(0);
     generation = 0;
 
     for (let row = 0; row < rows; row += 1) {
       for (let column = 0; column < columns; column += 1) {
-        const horizontalWeight = 0.55 + (column / Math.max(1, columns - 1)) * 0.45;
+        const horizontalWeight = 0.62 + (column / Math.max(1, columns - 1)) * 0.38;
         if (random() < density * horizontalWeight) state[row * columns + column] = 1;
       }
     }
@@ -100,6 +102,8 @@
     placeGlider(Math.max(2, Math.floor(columns * 0.84)), Math.max(2, Math.floor(rows * 0.62)));
     placeBlinker(Math.max(2, Math.floor(columns * 0.58)), Math.max(2, Math.floor(rows * 0.72)));
     placeBlinker(Math.max(2, Math.floor(columns * 0.88)), Math.max(2, Math.floor(rows * 0.42)));
+
+    for (let index = 0; index < state.length; index += 1) intensity[index] = state[index];
   };
 
   const roundedCell = (x, y, size, radius) => {
@@ -109,30 +113,30 @@
     context.fill();
   };
 
+  const smoothstep = (value) => value * value * (3 - 2 * value);
+
   const draw = () => {
     context.clearRect(0, 0, width, height);
-    const squareSize = Math.max(6, Math.round(cellSize * 0.28));
+    const baseSize = Math.max(7, Math.round(cellSize * 0.32));
 
     for (let row = 0; row < rows; row += 1) {
       for (let column = 0; column < columns; column += 1) {
         const index = row * columns + column;
-        const alive = state[index] === 1;
-        const afterglow = trail[index];
-        if (!alive && afterglow === 0) continue;
+        const value = Math.min(1, Math.max(0, intensity[index]));
+        if (value < 0.012) continue;
 
-        const horizontalWeight = 0.58 + (column / Math.max(1, columns - 1)) * 0.42;
-        if (alive) {
-          const accent = (column * 13 + row * 7 + generation) % 23 === 0;
-          context.fillStyle = accent
-            ? `rgba(164, 112, 74, ${0.4 * horizontalWeight})`
-            : `rgba(48, 94, 76, ${0.31 * horizontalWeight})`;
-        } else {
-          context.fillStyle = `rgba(59, 52, 45, ${0.055 * afterglow * horizontalWeight})`;
-        }
+        const eased = smoothstep(value);
+        const horizontalWeight = 0.68 + (column / Math.max(1, columns - 1)) * 0.32;
+        const accent = (column * 13 + row * 7) % 23 === 0;
+        const alpha = (accent ? 0.58 : 0.46) * eased * horizontalWeight;
+        context.fillStyle = accent
+          ? `rgba(153, 91, 54, ${alpha})`
+          : `rgba(38, 91, 70, ${alpha})`;
 
+        const squareSize = baseSize * (0.7 + eased * 0.3);
         const x = column * cellSize + (cellSize - squareSize) / 2;
         const y = row * cellSize + (cellSize - squareSize) / 2;
-        roundedCell(x, y, squareSize, 2.5);
+        roundedCell(x, y, squareSize, Math.min(3, squareSize * 0.26));
       }
     }
 
@@ -157,7 +161,6 @@
         const survives = alive ? neighbors === 2 || neighbors === 3 : neighbors === 3;
         next[index] = survives ? 1 : 0;
         if (survives) population += 1;
-        trail[index] = alive && !survives ? 2 : Math.max(0, trail[index] - 1);
       }
     }
 
@@ -172,20 +175,49 @@
       placeGlider(Math.max(2, Math.floor(columns * 0.76)), position);
       placeBlinker(Math.max(2, Math.floor(columns * 0.56)), Math.max(2, Math.floor(rows * 0.7)));
     }
-
   };
 
+  const cadence = () => (mobileQuery.matches ? 900 : 760);
   const shouldAnimate = () => !userPaused && !motionQuery.matches && !saveData && !document.hidden;
-  const cadence = () => (mobileQuery.matches ? 720 : 560);
 
-  const schedule = () => {
-    window.clearTimeout(timer);
-    if (!shouldAnimate()) return;
-    timer = window.setTimeout(() => {
+  const updateIntensities = (elapsed) => {
+    const blend = 1 - Math.exp(-elapsed / 210);
+    for (let index = 0; index < intensity.length; index += 1) {
+      const target = state[index];
+      const difference = target - intensity[index];
+      intensity[index] = Math.abs(difference) < 0.002 ? target : intensity[index] + difference * blend;
+    }
+  };
+
+  const animate = (timestamp) => {
+    if (!shouldAnimate()) {
+      animationFrame = 0;
+      draw();
+      return;
+    }
+
+    if (!lastFrameTime) lastFrameTime = timestamp;
+    if (!lastGenerationTime) lastGenerationTime = timestamp;
+    const elapsed = Math.min(64, Math.max(0, timestamp - lastFrameTime));
+
+    if (timestamp - lastGenerationTime >= cadence()) {
       step();
-      window.requestAnimationFrame(draw);
-      schedule();
-    }, cadence());
+      lastGenerationTime = timestamp;
+    }
+
+    updateIntensities(elapsed);
+    draw();
+    lastFrameTime = timestamp;
+    animationFrame = window.requestAnimationFrame(animate);
+  };
+
+  const syncAnimation = () => {
+    if (animationFrame) window.cancelAnimationFrame(animationFrame);
+    animationFrame = 0;
+    lastFrameTime = 0;
+    lastGenerationTime = 0;
+    if (shouldAnimate()) animationFrame = window.requestAnimationFrame(animate);
+    else draw();
   };
 
   const updatePauseButton = () => {
@@ -215,10 +247,10 @@
 
     state = new Uint8Array(columns * rows);
     next = new Uint8Array(columns * rows);
-    trail = new Uint8Array(columns * rows);
+    intensity = new Float32Array(columns * rows);
     seedGrid();
-    window.requestAnimationFrame(draw);
-    schedule();
+    draw();
+    syncAnimation();
   };
 
   const queueResize = () => {
@@ -231,19 +263,22 @@
       userPaused = !userPaused;
       savePausedPreference(userPaused);
       updatePauseButton();
-      schedule();
+      syncAnimation();
     });
   }
 
-  document.addEventListener("visibilitychange", schedule);
-  window.addEventListener("pagehide", () => window.clearTimeout(timer));
-  window.addEventListener("pageshow", schedule);
+  document.addEventListener("visibilitychange", syncAnimation);
+  window.addEventListener("pagehide", () => {
+    if (animationFrame) window.cancelAnimationFrame(animationFrame);
+    animationFrame = 0;
+  });
+  window.addEventListener("pageshow", syncAnimation);
   window.addEventListener("resize", queueResize, { passive: true });
   if (typeof ResizeObserver === "function") new ResizeObserver(queueResize).observe(canvas);
 
   const handleMotionChange = () => {
     updatePauseButton();
-    schedule();
+    syncAnimation();
   };
   if (typeof motionQuery.addEventListener === "function") motionQuery.addEventListener("change", handleMotionChange);
   else motionQuery.addListener(handleMotionChange);

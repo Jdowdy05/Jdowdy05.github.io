@@ -7,7 +7,7 @@ timezone: America/New_York
 permalink: pretty
 markdown: kramdown
 repository: Jdowdy05/jdowdy05.github.io
-cv_pdf: ""
+cv_pdf: "/assets/docs/jordan-dowdy-cv.pdf"
 
 plugins:
   - jekyll-seo-tag
@@ -26,5 +26,6 @@ exclude:
   - Gemfile.lock
   - README.md
   - THIRD_PARTY_NOTICES.md
+  - tmp
   - vendor
   - work

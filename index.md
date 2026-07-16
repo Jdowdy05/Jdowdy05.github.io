@@ -8,9 +8,10 @@ permalink: /
   <p class="academic-intro__kicker">Robotics · Reinforcement learning · Human-robot interaction</p>
   <h1>Jordan Dowdy</h1>
   <p class="academic-intro__role">PhD candidate at the University of Louisville</p>
+  <p class="academic-intro__lab">Member of <a href="{{ site.data.profile.lab.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ site.data.profile.lab.name | escape }} (opens in a new tab)"><strong>{{ site.data.profile.lab.name }}</strong></a></p>
 
   <div class="profile-actions" role="group" aria-label="Profile links">
-    <a class="profile-actions__cv" href="{{ '/cv/' | relative_url }}">CV</a>
+    <a class="profile-actions__cv" href="{{ '/cv/' | relative_url }}" aria-label="Curriculum Vitae" title="CV">{% include icon.html name="cv" %}</a>
     {% for social in site.data.profile.social %}
       <a class="profile-actions__social" href="{{ social.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.label | escape }} (opens in a new tab)" title="{{ social.label | escape }}">
         {% include icon.html name=social.icon %}
@@ -64,24 +65,12 @@ permalink: /
 <section class="home-section" aria-labelledby="projects-heading">
   <div class="minimal-heading">
     <div>
-      <p class="eyebrow">Selected code</p>
+      <p class="eyebrow">Work archive</p>
       <h2 id="projects-heading">Projects</h2>
     </div>
-    <a class="text-link" href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">→</span></a>
   </div>
 
-  <div class="project-list project-list--compact">
-    {% assign featured = site.data.projects | where: "featured", true %}
-    {% for project in featured %}
-      <a class="project-row" href="{{ project.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ project.name | escape }} (opens in a new tab)">
-        <span class="project-row__index">0{{ forloop.index }}</span>
-        <span class="project-row__body">
-          <strong>{{ project.name }}</strong>
-          <span>{{ project.summary }}</span>
-        </span>
-        <span class="project-row__meta">{{ project.language }}</span>
-        <span class="project-row__arrow" aria-hidden="true">↗</span>
-      </a>
-    {% endfor %}
+  <div class="projects-empty">
+    <p>Projects will be added here as the archive develops.</p>
   </div>
 </section>

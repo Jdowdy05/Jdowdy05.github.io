@@ -1,13 +1,13 @@
 {% assign publication = include.publication %}
 <article class="publication-card">
-  <div class="publication-card__media publication-card__media--{{ publication.art }}" aria-hidden="true">
-    <div class="publication-art">
-      <span></span><span></span><span></span><span></span>
-    </div>
-    <p class="publication-card__badge">{{ publication.venue_short }}</p>
-    <p class="publication-card__topic">{{ publication.topic }}</p>
-    <p class="publication-card__media-year">{{ publication.year }}</p>
-  </div>
+  <figure class="publication-card__media">
+    <img class="publication-card__image" src="{{ publication.image | relative_url }}" alt="{{ publication.image_alt | escape }}" loading="lazy" decoding="async">
+    <figcaption class="publication-card__caption">
+      <span class="publication-card__caption-badge">{{ publication.venue_short }}</span>
+      <span class="publication-card__caption-topic">{{ publication.topic }}</span>
+      <span class="publication-card__caption-year">{{ publication.year }}</span>
+    </figcaption>
+  </figure>
 
   <div class="publication-card__body">
     <p class="publication-card__kind">{{ publication.kind }} · {{ publication.year }}</p>

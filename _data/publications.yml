@@ -5,6 +5,9 @@
   venue_short: PREPRINT
   topic: Tactile interaction
   art: tactile
+  image: /assets/images/publications/real-time-neuroadaptive-tactile-calibration-setup.png
+  image_alt: Experimental setup showing a Neuromeka robot guided by a participant through a rectangular tactile calibration trajectory, with sensor and path diagrams.
+  image_caption: Figure 6 - rectangle calibration protocol and tactile sensor assignment.
   featured: true
   authors:
     - name: Ashutosh Prakash
@@ -24,6 +27,9 @@
   venue_short: SII
   topic: Torque-driven locomotion
   art: torque
+  image: /assets/images/publications/torque-driven-rl-unitree-b1-stairs.jpg
+  image_alt: Sequence of a simulated Unitree B1 quadruped descending stairs using a torque-driven reinforcement learning controller.
+  image_caption: Figure 1 - Unitree B1 walking down stairs in Isaac Sim.
   featured: true
   authors:
     - name: Jordan Dowdy
@@ -41,6 +47,9 @@
   venue_short: HUMANOIDS
   topic: Tele-loco-manipulation
   art: humanoid
+  image: /assets/images/publications/humanoid-tele-loco-manipulation-fig6.jpg
+  image_alt: Four-step sequence of a miniature humanoid walking to blocks, grasping a block, walking to a bin, and releasing it.
+  image_caption: Figure 6 - real tele-loco-manipulation block-relocation sequence.
   featured: true
   authors:
     - name: Nicolas Kosanovic
@@ -59,6 +68,9 @@
   venue_short: CASE
   topic: Sim-to-real locomotion
   art: sim
+  image: /assets/images/publications/isaac-sim-to-real-unitree-go1-incline.jpg
+  image_alt: Physical Unitree Go1 quadruped climbing an inclined wooden pallet during sim-to-real testing.
+  image_caption: Figure 1 - Unitree Go1 walking up an inclined pallet.
   featured: true
   authors:
     - name: Jordan Dowdy
@@ -72,14 +84,17 @@
   year: 2024
   kind: M.S. thesis
   venue: Electrical Engineering · University of Louisville
-  venue_short: DISSERTATION
+  venue_short: THESIS
   topic: Human-robot collaboration
   art: collaboration
+  image: /assets/images/publications/adaptive-robot-collaboration-octocan-interaction.png
+  image_alt: A participant grasping the sensorized OctoCan end effector mounted on a RE2 robotic arm.
+  image_caption: Figure 18 - a user's hand placement for use of the OctoCan.
   featured: true
   authors:
     - name: Jordan Dowdy
       highlight: true
   links:
-    - label: Dissertation
+    - label: Thesis
       url: https://doi.org/10.18297/etd/4456
   summary: OctoCan tactile sensing and neuroadaptive control support physical robot guidance, while online dynamic time-warping enables speed-adaptive imitation with the Zeno humanoid.

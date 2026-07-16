@@ -13,8 +13,9 @@ permalink: /about/
   <div class="about-monogram" aria-hidden="true">JD</div>
   <div class="about-copy">
     <p class="about-lede">I’m a PhD candidate at the University of Louisville researching reinforcement learning in robotics.</p>
+    <p>I’m a member of <a href="{{ site.data.profile.lab.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ site.data.profile.lab.name | escape }} (opens in a new tab)"><strong>{{ site.data.profile.lab.name }}</strong></a> at the University of Louisville.</p>
     <p>I’m interested in learning-based methods that help robots adapt, act autonomously, and make better use of the signals available to them.</p>
-    <p>This site brings together my current research directions, selected public code, academic record, and professional background.</p>
+    <p>This site brings together my current research directions, publications, academic record, and professional background.</p>
 
     <div class="interest-list" aria-label="Research themes">
       <p class="eyebrow">Research themes</p>
