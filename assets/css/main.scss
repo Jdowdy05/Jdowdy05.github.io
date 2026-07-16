@@ -373,6 +373,20 @@ a {
   fill: currentColor;
 }
 
+.cv-logo {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+  -webkit-mask: url("../icons/cv-logo.png") center / contain no-repeat;
+  mask: url("../icons/cv-logo.png") center / contain no-repeat;
+}
+
+.nav-icon .cv-logo {
+  width: 17px;
+  height: 17px;
+}
+
 .is-active .nav-icon {
   color: #dcebe3;
 }
@@ -630,6 +644,11 @@ a {
   width: 16px;
   height: 16px;
   fill: currentColor;
+}
+
+.profile-actions__cv .cv-logo {
+  width: 18px;
+  height: 18px;
 }
 
 .academic-intro__copy {
@@ -1460,6 +1479,11 @@ a {
   width: 16px;
   height: 16px;
   fill: currentColor;
+}
+
+.button__icon .cv-logo {
+  width: 17px;
+  height: 17px;
 }
 
 .button--primary {
