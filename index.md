@@ -8,7 +8,7 @@ permalink: /
   <p class="academic-intro__kicker">Robotics · Reinforcement learning · Human-robot interaction</p>
   <h1>Jordan Dowdy</h1>
   <p class="academic-intro__role">PhD candidate at the University of Louisville</p>
-  <p class="academic-intro__lab">Member of <a href="{{ site.data.profile.lab.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ site.data.profile.lab.name | escape }} (opens in a new tab)"><strong>{{ site.data.profile.lab.name }}</strong></a></p>
+  <p class="academic-intro__lab">Member of {% include lab-link.html %}</p>
 
   <div class="profile-actions" role="group" aria-label="Profile links">
     <a class="profile-actions__cv" href="{{ '/cv/' | relative_url }}" aria-label="Curriculum Vitae" title="CV">{% include icon.html name="cv" %}</a>

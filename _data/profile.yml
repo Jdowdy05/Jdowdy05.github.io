@@ -3,10 +3,11 @@ first_name: Jordan
 initials: JD
 role: PhD candidate researching reinforcement learning in robotics.
 affiliation: University of Louisville
-headshot: ""
+headshot: /assets/images/profile/jordan-dowdy-headshot.jpeg
 lab:
   name: Telos Lab
   url: https://telosrobotics.com
+  logo: /assets/images/branding/telos-lab-logo.png
 welcome: Welcome — I’m Jordan.
 short_bio: Robotics PhD researcher advancing reinforcement learning for embodied systems.
 social:
