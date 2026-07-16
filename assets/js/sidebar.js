@@ -77,6 +77,7 @@
       collapseIcon.textContent = "×";
       collapseText.textContent = "Close menu";
       backdrop.setAttribute("aria-hidden", "true");
+      if (sidebar.contains(document.activeElement)) mobileButton.focus();
       setSidebarAvailability(false);
       setMainAvailability(true);
     } else {
@@ -119,7 +120,12 @@
     }
     if (event.key !== "Tab") return;
 
-    const focusable = Array.from(sidebar.querySelectorAll("a, button:not([disabled])"));
+    const focusable = Array.from(
+      sidebar.querySelectorAll("a[href]:not([hidden]), button:not([disabled]):not([hidden])")
+    ).filter((element) => {
+      const style = window.getComputedStyle(element);
+      return (element.offsetWidth > 0 || element.offsetHeight > 0) && style.visibility !== "hidden";
+    });
     if (focusable.length === 0) return;
     const first = focusable[0];
     const last = focusable[focusable.length - 1];

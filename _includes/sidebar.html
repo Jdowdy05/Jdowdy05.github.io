@@ -9,6 +9,7 @@
       <span>{{ site.data.profile.initials }}</span>
     </div>
     <p class="sidebar__welcome">{{ site.data.profile.welcome }}</p>
+    <p class="sidebar__affiliation">{{ site.data.profile.affiliation }}</p>
     <p class="sidebar__bio">{{ site.data.profile.short_bio }}</p>
   </div>
 
@@ -38,5 +39,11 @@
     </ul>
   </nav>
 
-  <p class="sidebar__foot">Louisville, Kentucky</p>
+  <div class="sidebar__bottom">
+    <button class="life-toggle" id="life-toggle" type="button">
+      <span class="life-toggle__dot" aria-hidden="true"></span>
+      <span class="life-toggle__label" id="life-toggle-label">Pause living grid</span>
+    </button>
+    <p class="sidebar__foot">Louisville, Kentucky</p>
+  </div>
 </aside>

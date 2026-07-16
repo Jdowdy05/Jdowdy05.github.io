@@ -18,7 +18,8 @@ permalink: /current-work/
         <div>
           <p class="status"><span></span>{{ item.status }}</p>
           <h2>{{ item.title }}</h2>
-          <p>{{ item.summary }}</p>
+          <p class="research-card__summary">{{ item.summary }}</p>
+          <p class="research-card__question"><strong>Current question</strong>{{ item.question }}</p>
         </div>
       </article>
     {% endfor %}
@@ -26,7 +27,7 @@ permalink: /current-work/
 </section>
 
 <section class="note-panel">
-  <p class="eyebrow">More to come</p>
-  <h2>Research updates are being prepared.</h2>
-  <p>This page will grow with concise project summaries, research questions, milestones, and selected results.</p>
+  <p class="eyebrow">Through line</p>
+  <h2>Learning is only useful when behavior holds up under change.</h2>
+  <p>These directions connect algorithm design with the practical questions of evaluation, sensing, and eventual deployment.</p>
 </section>

@@ -12,9 +12,20 @@ permalink: /about/
 <section class="about-layout section--rule">
   <div class="about-monogram" aria-hidden="true">JD</div>
   <div class="about-copy">
-    <p class="about-lede">Jordan Dowdy is a PhD student at the University of Louisville researching reinforcement learning in robotics.</p>
-    <p>His work focuses on learning-based methods for robotic behavior, adaptation, and autonomy. This site brings together current research, publications, selected public projects, and professional background.</p>
-    <p>For the latest code and academic record, follow the profiles below.</p>
+    <p class="about-lede">I’m a PhD student at the University of Louisville researching reinforcement learning in robotics.</p>
+    <p>I’m interested in learning-based methods that help robots adapt, act autonomously, and make better use of the signals available to them.</p>
+    <p>This site brings together my current research directions, selected public code, academic record, and professional background.</p>
+
+    <div class="interest-list" aria-label="Research themes">
+      <p class="eyebrow">Research themes</p>
+      <ul>
+        <li>Robot learning</li>
+        <li>Reinforcement learning</li>
+        <li>Simulation and evaluation</li>
+        <li>Force and tactile sensing</li>
+        <li>Embodied systems</li>
+      </ul>
+    </div>
 
     <div class="about-links">
       {% for social in site.data.profile.social %}

@@ -1,3 +1,12 @@
-- title: Reinforcement Learning for Robotics
-  status: Active research focus
-  summary: Exploring how learning-based methods can improve robotic behavior, adaptation, and autonomy.
+- title: Adaptive robot behavior
+  status: Active research direction
+  summary: Studying reinforcement learning methods that help robots adjust to new tasks, operating conditions, and sources of uncertainty.
+  question: How can policies remain useful as tasks and operating conditions change?
+- title: Simulation and evaluation
+  status: Experiment infrastructure
+  summary: Building workflows for training, stress-testing, and comparing learned policies before they move closer to hardware.
+  question: Which tests reveal whether learned behavior is robust before hardware trials?
+- title: Sensing for interaction
+  status: Applied robotics
+  summary: Exploring how force and tactile signals can support safer, more informed robot interaction.
+  question: How can force and tactile signals improve a robot’s decisions during contact?

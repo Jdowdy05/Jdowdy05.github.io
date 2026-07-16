@@ -21,7 +21,10 @@ permalink: /projects/
         <h2>{{ project.name }}</h2>
         <p>{{ project.summary }}</p>
       </div>
-      <span class="tag">{{ project.language }}</span>
+      <div class="tag-group">
+        <span class="tag">{{ project.language }}</span>
+        <span class="tag tag--neutral">{{ project.focus }}</span>
+      </div>
     </a>
   {% endfor %}
 </section>
