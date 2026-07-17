@@ -1019,6 +1019,10 @@ a {
   text-transform: uppercase;
 }
 
+.publication-card__kind--natural-case {
+  text-transform: none;
+}
+
 .publication-card h2,
 .publication-card h3 {
   margin: 0;
