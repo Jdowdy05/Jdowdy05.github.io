@@ -21,6 +21,42 @@
       url: https://doi.org/10.20944/preprints202606.0309.v1
   summary: A dual-loop neuroadaptive tactile interface was evaluated across 28 participants and 112 personalized calibration models, enabling real-time human-guided robot-arm motion.
 
+- title: "Loco-Loco-RL: Low-Cost Terrain Mapping for Humanoid Locomotion with Reinforcement Learning"
+  year: 2026
+  kind: Accepted conference paper
+  venue: IEEE National Aerospace and Electronics Conference (NAECON) · Accepted
+  venue_short: NAECON
+  topic: Terrain-aware humanoid locomotion
+  art: terrain
+  image: /assets/images/publications/loco-loco-rl-op3-terrain-sensing.png
+  image_alt: Multiple simulated ROBOTIS OP3 humanoids traverse tiled terrain while red 8-by-8 time-of-flight depth scans visualize local terrain sensing.
+  image_caption: Figure 2 - ROBOTIS OP3 policies using local terrain-depth sensing in Isaac Sim.
+  featured: true
+  authors:
+    - name: Jordan Dowdy
+      highlight: true
+    - name: Gryffin Reizian
+    - name: Jean Chagas Vaz
+  summary: A token-compressed temporal transformer fuses proprioception with a low-cost 64-point time-of-flight terrain scan and transfers to a physical ROBOTIS OP3 for terrain-aware locomotion.
+
+- title: "Learning to Stack: Cube-Stacking Imitation Learning from Virtual Reality Demonstrations"
+  year: 2026
+  kind: Accepted conference paper
+  venue: IEEE National Aerospace and Electronics Conference (NAECON) · Accepted · † Equal contribution
+  venue_short: NAECON
+  topic: VR imitation learning
+  art: cube
+  image: /assets/images/publications/learning-to-stack-cube-environment.png
+  image_alt: A simulated custom five-degree-of-freedom robot arm positioned above red, blue, and green cubes in the cube-stacking task environment.
+  image_caption: Figure 2 - cube-stacking environment used for virtual-reality demonstration collection.
+  featured: true
+  authors:
+    - name: Gryffin Reizian†
+    - name: Jordan Dowdy†
+      highlight: true
+    - name: Jean Chagas Vaz
+  summary: A virtual-reality teleoperation pipeline in Isaac Sim and Isaac Lab collects reusable cube-stacking demonstrations, retargets them to joint space, re-renders observations, and expands the dataset with Isaac Mimic.
+
 - title: Towards Torque-Driven Reinforcement Learning for Quadruped Locomotion
   year: 2026
   kind: Conference paper
