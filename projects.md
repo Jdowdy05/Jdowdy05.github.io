@@ -13,6 +13,14 @@ permalink: /projects/
 <section class="project-grid" aria-label="Selected projects">
   {% for project in site.data.projects %}
     <a class="project-card" href="{{ project.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="{{ project.title | escape }} on GitHub (opens in a new tab)">
+      {% if project.image %}
+        <figure class="project-card__media">
+          <div class="project-card__image">
+            <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt | escape }}" width="{{ project.image_width }}" height="{{ project.image_height }}" loading="lazy" decoding="async">
+          </div>
+          <figcaption>{{ project.image_caption | escape }}</figcaption>
+        </figure>
+      {% endif %}
       <div class="project-card__top">
         <span>{{ project.category | escape }}</span>
         <span class="project-card__arrow" aria-hidden="true">↗</span>

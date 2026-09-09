@@ -1,14 +1,32 @@
 - title: RIVET XR
   category: XR and robot simulation
   url: https://github.com/Jdowdy05/RivetXR
+  image: /assets/images/projects/rivet-xr-quest-demo.gif
+  image_width: 600
+  image_height: 360
+  image_alt: Quest 3S recording of RIVET XR showing a controller, virtual objects, and a simulated robot arm in passthrough.
+  image_caption: Quest 3S recording
+  image_source: https://github.com/Jdowdy05/RivetXR/blob/main/docs/media/quest-arm-objects.gif
   summary: Native XR robot simulation for the Meta Quest 3 family, combining on-device Newton physics, OpenXR rendering, and RGB-D scene inspection.
 
 - title: Point Taken
   category: Optical tactile sensing
   url: https://github.com/Jdowdy05/PointTaken
+  image: /assets/images/projects/point-taken-fingertip.png
+  image_width: 1900
+  image_height: 1500
+  image_alt: CAD rendering of the Point Taken tactile fingertip with a dark compliant contact surface and a light sensor housing.
+  image_caption: Fingertip CAD rendering
+  image_source: https://github.com/Jdowdy05/PointTaken/blob/master/CAD/Sensor/images/sensor_assembled_hero.png
   summary: An optical tactile fingertip prototype built around the TMF8829 time-of-flight sensor. Includes custom PCBs and a sensor housing with a deformable silicone surface for observing contact.
 
 - title: Unitree Z1 Wrist
   category: Robotic hardware
   url: https://github.com/Jdowdy05/unitree-z1-wrist
+  image: /assets/images/projects/unitree-z1-wrist.png
+  image_width: 1220
+  image_height: 1120
+  image_alt: CAD assembly of the Unitree Z1 wrist showing its two intersecting axes, four servos, and printed structural parts.
+  image_caption: Wrist CAD assembly
+  image_source: https://github.com/Jdowdy05/unitree-z1-wrist/blob/main/docs/images/wrist.png
   summary: A two-axis, 3D-printable wrist prototype for the Unitree Z1 using four DYNAMIXEL XL330 servos. Includes editable CAD, printable parts, an assembly guide, and a bill of materials.
