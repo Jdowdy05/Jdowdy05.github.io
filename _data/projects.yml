@@ -1,1 +1,14 @@
-[]
+- title: RIVET XR
+  category: XR and robot simulation
+  url: https://github.com/Jdowdy05/RivetXR
+  summary: Native XR robot simulation for the Meta Quest 3 family, combining on-device Newton physics, OpenXR rendering, and RGB-D scene inspection.
+
+- title: Point Taken
+  category: Optical tactile sensing
+  url: https://github.com/Jdowdy05/PointTaken
+  summary: An optical tactile fingertip prototype built around the TMF8829 time-of-flight sensor. Includes custom PCBs and a sensor housing with a deformable silicone surface for observing contact.
+
+- title: Unitree Z1 Wrist
+  category: Robotic hardware
+  url: https://github.com/Jdowdy05/unitree-z1-wrist
+  summary: A two-axis, 3D-printable wrist prototype for the Unitree Z1 using four DYNAMIXEL XL330 servos. Includes editable CAD, printable parts, an assembly guide, and a bill of materials.
