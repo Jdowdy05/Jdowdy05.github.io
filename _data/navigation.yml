@@ -1,9 +1,10 @@
 - label: Home
   compact: H
   url: /
-- label: Current Work
-  compact: W
-  url: /current-work/
+# Temporarily hidden; uncomment when republishing current-work.md.
+# - label: Current Work
+#   compact: W
+#   url: /current-work/
 - label: CV
   compact: CV
   url: /cv/

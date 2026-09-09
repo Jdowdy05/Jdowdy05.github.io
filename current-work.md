@@ -2,6 +2,7 @@
 title: Current Work
 description: Current research interests and work by Jordan Dowdy.
 permalink: /current-work/
+published: false
 ---
 
 <header class="page-header">
