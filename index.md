@@ -51,23 +51,3 @@ image:
     {% endfor %}
   </div>
 </section>
-
-<section class="home-section" aria-labelledby="current-heading">
-  <div class="minimal-heading">
-    <div>
-      <p class="eyebrow">Research now</p>
-      <h2 id="current-heading">Current directions</h2>
-    </div>
-    <a class="text-link" href="{{ '/current-work/' | relative_url }}">More about the work <span aria-hidden="true">→</span></a>
-  </div>
-
-  <div class="research-strip">
-    {% for item in site.data.current_work %}
-      <article>
-        <span>0{{ forloop.index }}</span>
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.summary }}</p>
-      </article>
-    {% endfor %}
-  </div>
-</section>
